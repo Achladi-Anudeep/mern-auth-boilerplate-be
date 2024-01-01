@@ -1,5 +1,6 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 dotenv.config();
 import cookieParser from "cookie-parser";
 const port = process.env.PORT || 5000;
@@ -9,6 +10,12 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 connectDB();
 const app = express();
+app.use(
+  cors({
+    origin:
+      "https://mern-auth-boilerplate.onrender.com" || "http://localhost:3000/",
+  })
+);
 app.use(express.json());
 app.use(
   express.urlencoded({
