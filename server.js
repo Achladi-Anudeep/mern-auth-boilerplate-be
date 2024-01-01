@@ -12,8 +12,10 @@ connectDB();
 const app = express();
 app.use(
   cors({
-    origin:
-      "https://mern-auth-boilerplate.onrender.com" || "http://localhost:3000/",
+    origin: [
+      "https://mern-auth-boilerplate.onrender.com",
+      "http://localhost:3000/",
+    ],
   })
 );
 app.use(express.json());
