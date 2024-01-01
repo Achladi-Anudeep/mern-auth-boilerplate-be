@@ -14,7 +14,7 @@ app.use(
   cors({
     origin: [
       "https://mern-auth-boilerplate.onrender.com",
-      "http://localhost:3000/",
+      "http://localhost:3000",
     ],
   })
 );
